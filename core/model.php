@@ -3,9 +3,9 @@
 class Model {
 	public static function load($model){
 
-		if (is_file('./model/'.$model.'.php')) {
+		if (is_file(DIR_MVC.'/model/'.$model.'.php')) {
 			$class = 'model'.$model;
-			include('./model/'.$model.'.php');
+			include(DIR_MVC.'/model/'.$model.'.php');
 			if(!class_exists($class, false)){
 				exit('class model '.$model.' not found');
 			}else{
