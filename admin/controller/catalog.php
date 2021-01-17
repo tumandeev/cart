@@ -9,12 +9,12 @@ class Catalog{
 		$data['edit_link'] = 'Редактировать товар';
 		$data['entry_add'] = 'Создать товар';
 		$data['entry_delete'] = 'Удалить товар';
-		$data['add_link'] = '/admin/index.php?route=product';
+		
 		
 
 		$data['products'] = [];
 
-
+		$url = '';
 
 //пагинация
 		$total_product = $product_modul->getTotalProducts();
@@ -35,7 +35,7 @@ class Catalog{
 
 		if(!empty($_GET['page'])){
 			$page = $_GET['page'];
-
+			$url .= '&page='.$page;
 			if($page != $pagination_link){
 				
 				$data['pagination_link'][] = [
@@ -84,7 +84,7 @@ class Catalog{
 		
 		
 
-
+		$data['add_link'] = '/admin/index.php?route=product'.$url;
 		$products = $product_modul->getProducts($filter_product);
 
 		foreach ($products as $product) {
@@ -93,8 +93,8 @@ class Catalog{
 				'product_id' 	=>  $product['product_id'],
 				'name' 			=> $product['name'],
 				'description' 	=>  mb_strimwidth($product['description'], 0, 60, "..."),
-				'href'			=> '/admin/index.php?route=product&product_id=' . $product['product_id'],
-				'delete_link'   => '/admin/index.php?route=product&delete_id=' . $product['product_id'],
+				'href'			=> '/admin/index.php?route=product&product_id=' . $product['product_id'].$url,
+				'delete_link'   => '/admin/index.php?route=product&delete_id=' . $product['product_id'].$url,
 			];
 
 		}

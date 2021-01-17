@@ -6,7 +6,7 @@ class Catalog{
 		$data['link_product'] = 'Подробнее';
 		$data['title'] = 'Каталог';
 
-
+		$url = '';
 
 
 //пагинация
@@ -28,7 +28,7 @@ class Catalog{
 
 		if(!empty($_GET['page'])){
 			$page = $_GET['page'];
-
+			$url .= '&page='.$page;
 			if($page != $pagination_link){
 				
 				$data['pagination_link'][] = [
@@ -81,7 +81,7 @@ class Catalog{
 			$data['products'][] = [
 				'name' => mb_strimwidth($product['name'], 0, 40, "..."),
 				'description' => mb_strimwidth($product['description'], 0, 60, "..."),
-				'href' => '/index.php?route=product&product_id='.$product['product_id'],
+				'href' => '/index.php?route=product&product_id='.$product['product_id'].$url,
 			];
 		}
 		

@@ -3,20 +3,22 @@ class Product{
 	public function index(){
 		$product_model = Model::load('product');
 
+		$url = '';
 
 
-		
-
+		if(isset($_GET['page'])){
+			$url .= '&page='.$_GET['page'];
+		}
 
 		if(isset($_GET['product_id'])){
 
 			$data['breadcrubs'][] = [
 				'name' 	=> 'Главная',
-				'href' 	=> '/index.php?route=catalog'
+				'href' 	=> '/'
 			];
 			$data['breadcrubs'][] = [
 				'name' 	=> 'Категория',
-				'href' 	=> '/index.php?route=catalog'
+				'href' 	=> '/index.php?route=catalog'.$url
 			];
 			$data['breadcrubs'][] = [
 				'name' 	=> 'Товар',

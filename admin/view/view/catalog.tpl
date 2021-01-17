@@ -14,15 +14,19 @@
 
 		<div class="products">
 
-		{foreach from=$products item=product}
+		{foreach from=$products item=product name=products}
+			{if ($smarty.foreach.products.iteration % 2) == 0}
+		<div class="product_item noteven" >
+			{else}
 		<div class="product_item" >
-
+			{/if}
+			<img src="../../image/no_image.png">
 			<li class="product_name" >{$product.name}</li>
 			<p class="product_description" >{$product.description}</p>
 			<a class="link_product edit" href="{$product.href}"><p>{$edit_link}</p></a>
 			<a class="link_product delete" href="{$product.delete_link}"> <p>{$entry_delete} </p></a>
-		
 		</div>
+
 		{/foreach}
 
 

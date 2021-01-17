@@ -57,7 +57,7 @@ class ModelProduct{
 			->execute(['product_id' => $product_id]);
 
 			if($redirect){
-				header('location: /admin/index.php?route=catalog');
+				return false;
 			}else{
 				return true;
 			}
@@ -74,7 +74,34 @@ class ModelProduct{
 			->prepare("INSERT INTO product (name, description) VALUES (:name, :description)")
 			->execute(['name' => $name, 'description' => $description]);
 
-			header('location: /admin/index.php?route=catalog');
+			return true;
 		}
+	}
+
+	public function validate($product_post = array()){
+		$error = [];
+		if(!empty($product_post['name'])){
+			if(iconv_strlen($product_post['name']) <= 2){
+				$error[] = 'Длинна названия должна быть не менее 3х символов';
+			}
+		}else{
+			$error[] = 'Укажите название товара';
+		}
+
+
+		if(!empty($product_post['description'])){
+			if(iconv_strlen($product_post['description']) <= 2){
+				$error[] = 'Длинна описания должна быть не менее 3х символов';
+			}
+		}else{
+			$error[] = 'Укажите описание товара';
+		}
+
+		if(!empty($error)){
+			return $error;
+		}else{
+			return false;
+		}
+
 	}
 }
