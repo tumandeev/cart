@@ -26,7 +26,11 @@
 	</div>
 
 
-
+	<div class="pagination">
+		{foreach from=$pagination_link item=pagination_item}
+			<a href="{$pagination_item.href}"><li class="pagination_item" >{$pagination_item.name}</li></a>
+		{/foreach}
+	</div>
 
 
 	</div>

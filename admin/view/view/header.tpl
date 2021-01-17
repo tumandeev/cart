@@ -9,6 +9,14 @@
 </head>
 <header class="header" >
 	<div class="container">
-	<h3 class="title" >хедер админ части</h3>
+		<div class="content">
+			<h3 class="title" >хедер админ части</h3>
+			<div class="log_out">
+				{if !isset($logout)}
+				<a href="/admin/index.php?route=login&logout=logout">выход</a>
+				{/if}
+			</div>
+		</div>
+
 	</div>
 </header>

@@ -13,7 +13,7 @@
 				
 			{/foreach}
 		</div>
-		<a class="link_prev" href="{$prev_link}"><p>{$entry_prev}</p></a>
+	
 		<div class="product">
 			<div class="image">
 				<img src="../image/no_image.png">
@@ -23,9 +23,12 @@
 				<p>{$product.description}</p>
 			</div>
 		</div>
+
+		<div class="product_footer">
+			{include file='footer.tpl'}
+		</div>
 	</div>
 
 
-	{include file='footer.tpl'}
 </body>
 </html>

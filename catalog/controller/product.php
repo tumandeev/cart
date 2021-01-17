@@ -2,8 +2,8 @@
 class Product{
 	public function index(){
 		$product_model = Model::load('product');
-		$data['entry_prev'] = 'Назад';
-		$data['prev_link'] = '/index.php?route=catalog';
+
+
 
 		
 
@@ -15,7 +15,7 @@ class Product{
 				'href' 	=> '/index.php?route=catalog'
 			];
 			$data['breadcrubs'][] = [
-				'name' 	=> 'Категори',
+				'name' 	=> 'Категория',
 				'href' 	=> '/index.php?route=catalog'
 			];
 			$data['breadcrubs'][] = [

@@ -13,6 +13,8 @@ include (DIR_CORE.'/controller.php');
 
 
 
+
+
 	if(!empty($_COOKIE['token'])){
 		$user_token = $_COOKIE['token'];
 		$check_token = Model::load('checktoken');

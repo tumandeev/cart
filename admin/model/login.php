@@ -12,21 +12,33 @@ class ModelLogin{
 
 		if(!empty($result) && !empty($user['password'])  && !empty($result['password'])){
 			if($user['password'] == $result['password'] ){
-				$this->addSession($result);
+			 	$status = $this->addSession($result);
 			}else{
-				$error = 'Логин или пароль не верный';
+				$status = false;
 			}
 		}else{
-			$error = 'Логин или пароль не верный';
+			$status = false;
 			
 		}
 
-		if(!empty($error)){
-			return $error;
+		if(!empty($status)){
+			return $status;
 		}
 
 		
 	}
+
+	public function checkToken($token){
+
+		$sql = 'SELECT * FROM session ORDER BY id DESC';
+		$result = DB::getInstance()->query($sql)->fetch(PDO::FETCH_ASSOC);
+		if($result['token'] == $token){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 
 
 
@@ -44,8 +56,8 @@ class ModelLogin{
 			->prepare("INSERT INTO session (user_id, token) VALUES (:user_id, :token)")
 			->execute(['user_id' => $user_id, 'token' => $token]);
 
-
-			header('location: /admin/index.php?route=catalog');
+			return true;
+			// header('location: /admin/index.php?route=catalog');
 		}
 	}
 

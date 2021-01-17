@@ -7,12 +7,28 @@ class ModelProduct{
 		return $result;
 	}
 
-	public function getProducts(){
+	public function getProducts($filter = array()){
 
 		$sql = 'SELECT * FROM product';
-	
+
+		if(isset($filter['start']) && isset($filter['limit'])){
+			if($filter['start'] <= 0){
+				$filter['start'] = 0;
+			}
+
+			$sql .= ' LIMIT '.$filter['start'];
+			$sql .= ', '.$filter['limit'];
+
+		}
 		$result = DB::getInstance()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 		return $result;
+	}
+
+	public function getTotalProducts(){
+		$sql = 'SELECT count(*) as total FROM product';
+
+		$result = DB::getInstance()->query($sql)->fetch(PDO::FETCH_ASSOC);
+		return $result['total'];
 
 	}
 

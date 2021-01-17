@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-01-17 11:46:20
+/* Smarty version 3.1.36, created on 2021-01-17 18:14:23
   from '/var/www/html/catalog/view/view/catalog.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_6003eb4c504011_95488034',
+  'unifunc' => 'content_6004463fb2e804_70645575',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'efccd8552afc979f3c7daba0d7cf63d1c097986b' => 
     array (
       0 => '/var/www/html/catalog/view/view/catalog.tpl',
-      1 => 1610869570,
+      1 => 1610892861,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6003eb4c504011_95488034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6004463fb2e804_70645575 (Smarty_Internal_Template $_smarty_tpl) {
 ?>	<?php $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 	<body>
@@ -63,7 +63,20 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</div>
 
 
-
+	<div class="pagination">
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['pagination_link']->value, 'pagination_item');
+$_smarty_tpl->tpl_vars['pagination_item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['pagination_item']->value) {
+$_smarty_tpl->tpl_vars['pagination_item']->do_else = false;
+?>
+			<a href="<?php echo $_smarty_tpl->tpl_vars['pagination_item']->value['href'];?>
+"><li class="pagination_item" ><?php echo $_smarty_tpl->tpl_vars['pagination_item']->value['name'];?>
+</li></a>
+		<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+	</div>
 
 
 	</div>
