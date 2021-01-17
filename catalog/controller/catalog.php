@@ -12,7 +12,7 @@ class Catalog{
 		$data['products'] = [];
 		foreach ($products as $product) {
 			$data['products'][] = [
-				'name' => $product['name'],
+				'name' => mb_strimwidth($product['name'], 0, 40, "..."),
 				'description' => mb_strimwidth($product['description'], 0, 60, "..."),
 				'href' => '/index.php?route=product&product_id='.$product['product_id'],
 			];

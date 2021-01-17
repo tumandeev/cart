@@ -16,6 +16,6 @@ define('DIR_MVC', './');
 include(DIR_CORE.'/db.php');
 include(DIR_CORE.'/smarty/libs/Smarty.class.php');
 include(DIR_CORE.'/render.php');
-
+include(DIR_CORE.'/image.php');
 
 

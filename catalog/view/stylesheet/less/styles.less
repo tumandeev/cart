@@ -34,12 +34,30 @@ ul{
 	margin: 0 auto;
 }
 .products{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
 	.product_item{
 		border: solid 1px #000;
-		margin: 10px 0 0 0;
+	    margin: 10px 5px 0 5px;
 		padding: 10px;
 		text-align: center;
 	    background: #f1f1f1;
+	    width: 160px;
+	    position:relative;
+
+	    .product_description{
+	    	margin: 9px 0 37px 0;
+			width: 160px;
+			overflow: hidden;
+	    }
+		.product_name{
+			font-weight: bold;
+		} 
+		.product_item_image{
+			margin: 0 0 10px 0;
+		}
 	}
 	li{
 		list-style: none;
@@ -52,6 +70,9 @@ ul{
     padding: 7px 0 0;
     text-decoration: none;
     color: #1f7b09;
+    position: absolute;
+    bottom: 15px;
+    right: 39px;
     p{
 		height: 25px;
 	    padding: 7px 0 0;
@@ -64,6 +85,6 @@ ul{
 	    color: #fff;
 	}
 }
-.product_name{
-	font-weight: bold;
-} 
+
+
+
