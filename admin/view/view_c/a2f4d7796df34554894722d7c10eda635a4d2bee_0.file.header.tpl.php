@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-01-17 22:53:32
+/* Smarty version 3.1.36, created on 2021-01-18 08:36:59
   from '/var/www/html/admin/view/view/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_600487acc26cb6_88450889',
+  'unifunc' => 'content_6005106b6a2370_64176565',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a2f4d7796df34554894722d7c10eda635a4d2bee' => 
     array (
       0 => '/var/www/html/admin/view/view/header.tpl',
-      1 => 1610909609,
+      1 => 1610944614,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_600487acc26cb6_88450889 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6005106b6a2370_64176565 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +42,7 @@ function content_600487acc26cb6_88450889 (Smarty_Internal_Template $_smarty_tpl)
 				<a href="/admin/index.php?route=login&logout=logout">выход</a>
 				<?php }?>
 				<p></p>
-				<a href="/">Перейти в магазин</a>
+				<a href="/" target="_blank">Перейти в магазин</a>
 			</div>
 		</div>
 

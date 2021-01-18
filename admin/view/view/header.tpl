@@ -16,7 +16,7 @@
 				<a href="/admin/index.php?route=login&logout=logout">выход</a>
 				{/if}
 				<p></p>
-				<a href="/">Перейти в магазин</a>
+				<a href="/" target="_blank">Перейти в магазин</a>
 			</div>
 		</div>
 

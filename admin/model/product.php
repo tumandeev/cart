@@ -67,8 +67,7 @@ class ModelProduct{
 		if(isset($product)){
 
 			$name		 = $product['name'];
-			$description = $product['description'];
-
+			$description =  nl2br($product['description']);
 
 			DB::getInstance()
 			->prepare("INSERT INTO product (name, description) VALUES (:name, :description)")
